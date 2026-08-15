@@ -45,4 +45,15 @@ public class NumberAnalyzer {
         System.out.println("Number of digits: " + digitCount);
         System.out.println("Sum of digits: " + digitSum);
     }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = readNumber(input);
+        boolean even = isEven(number);
+        boolean positive = isPositive(number);
+        int absolute = absoluteValue(number);
+        int digitCount = countDigits(absolute);
+        int digitSum = sumDigits(absolute);
+        printReport(number, even, positive, digitCount, digitSum);
+        input.close();
+    }
 }
