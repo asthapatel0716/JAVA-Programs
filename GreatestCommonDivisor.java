@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class GreatestCommonDivisor {
     public static int gcd(int first, int second) {
         first = Math.abs(first);
@@ -8,5 +9,14 @@ public class GreatestCommonDivisor {
             second = remainder;
         }
         return first;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int first = sc.nextInt();
+        System.out.print("Enter second number: ");
+        int second = sc.nextInt();
+        System.out.println("GCD = " + gcd(first, second));
+        sc.close();
     }
 }
