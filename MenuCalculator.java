@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class MenuCalculator {
     public static void printMenu() {
         System.out.println("\n1. Add");
@@ -22,5 +23,32 @@ public class MenuCalculator {
             default:
                 return 0;
         }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        do {
+            printMenu();
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            if (!isValidChoice(choice)) {
+                System.out.println("Invalid menu choice.");
+                continue;
+            }
+            if (choice == 0) {
+                break;
+            }
+            System.out.print("Enter first number: ");
+            double num1 = sc.nextDouble();
+            System.out.print("Enter second number: ");
+            double num2 = sc.nextDouble();
+            if (choice == 4 && num2 == 0) {
+                System.out.println("Cannot divide by zero.");
+                continue;
+            }
+            double result = calculate(choice, num1, num2);
+            System.out.println("Result: " + result);
+        } while (choice != 0);
+        sc.close();
     }
 }
