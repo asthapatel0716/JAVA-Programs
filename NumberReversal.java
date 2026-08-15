@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class NumberReversal {
     public static int reverseNumber(int number) {
         int reversed = 0;
@@ -7,5 +8,12 @@ public class NumberReversal {
             number = number / 10;
         }
         return reversed;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a non-negative integer: ");
+        int number = sc.nextInt();
+        System.out.println("Reversed number: " + reverseNumber(number));
+        sc.close();
     }
 }
